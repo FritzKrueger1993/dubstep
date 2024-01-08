@@ -22,9 +22,9 @@ lfoAmount.connect(filter.frequency);
 
 function updateSound(){
     mouseXfloat = map(mouseX, 0, width, 0, 1);
-    freq = map(mouseY, height, 0, 0, 1200)
+    freq = map(mouseY, height, 0, 30, 1200)
     lfoFreq = map(mouseXfloat,0,1,0.5,8);
-    lfoAmountValue = map(mouseY, height, 0, 0, freq);
+    lfoAmountValue = map(mouseY, height, 0, 0, freq-10);
     filter.frequency.setTargetAtTime(freq, audioContext.currentTime, 0.02);
     lfo.frequency.setTargetAtTime(lfoFreq, audioContext.currentTime, 0.2);
     lfoAmount.gain.setTargetAtTime(lfoAmountValue,audioContext.currentTime, 0.2);
