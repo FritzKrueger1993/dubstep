@@ -1,5 +1,5 @@
 let testParticle;
-let particleCount = 100;
+let particleCount = 80;
 let particles = [];
 let magnitude;
 let particleSpeed;
@@ -59,5 +59,4 @@ function draw() {
 
 function mousePressed(){
   audioContext.resume();
-  
 }

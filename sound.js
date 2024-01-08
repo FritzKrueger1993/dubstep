@@ -6,7 +6,7 @@ saw.frequency.setValueAtTime(80,audioContext.currentTime);
 saw.type = "sawtooth";
 saw.start();
 filter.type = "lowpass";
-filter.Q.setValueAtTime(8, audioContext.currentTime);
+filter.Q.setValueAtTime(6, audioContext.currentTime);
 lfoAmount.gain.setValueAtTime(150, audioContext.currentTime);
 
 
@@ -30,12 +30,10 @@ function updateSound(){
     lfoAmount.gain.setTargetAtTime(lfoAmountValue,audioContext.currentTime, 0.2);
 
     if(mouseIsPressed){
-        masterGain.gain.setTargetAtTime(0.6, audioContext.currentTime, 0.02);
+        masterGain.gain.setTargetAtTime(0.5, audioContext.currentTime, 0.02);
     }
     else{
         masterGain.gain.setTargetAtTime(0, audioContext.currentTime, 0.05);
     }
-
-    
-    
+   
 }
