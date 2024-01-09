@@ -15,6 +15,7 @@ const masterGain = audioContext.createGain();
 
 //Control Variables
 let mouseXfloat;
+let mouseYfloat;
 let freq; 
 let lfoFreq;
 
@@ -34,8 +35,7 @@ function setup() {
 }
 
 function draw() {
-  background(0,0,0);
-
+background(0);
   particleSpeed = map(mouseX,0,width,0.01,0.1);
   magnitude = map(mouseY,height,0,0,200);
 
@@ -58,5 +58,7 @@ function draw() {
 }
 
 function mousePressed(){
+ if(audioContext.state == "suspended" || audioContext.state == "closed"){ 
   audioContext.resume();
+ }
 }
