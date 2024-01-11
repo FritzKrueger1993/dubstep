@@ -3,6 +3,7 @@ let particleCount = 80;
 let particles = [];
 let magnitude;
 let particleSpeed;
+let cnv;
 
 //Sound Variables
 
@@ -23,7 +24,7 @@ let lfoFreq;
 
 function setup() {
   colorMode(HSB,360);
-  var cnv = createCanvas(400, 400);
+  cnv = createCanvas(400, 400);
   var x = (windowWidth - width) / 2;
   var y = (windowHeight - height) / 2;
 
@@ -58,8 +59,13 @@ background(0);
 }
 
 function mousePressed(){
- /*if(audioContext.state == "suspended" || audioContext.state == "closed"){ 
+ if(audioContext.state == "suspended" || audioContext.state == "closed"){ 
   audioContext.resume();
- } */
- audioContext.resume();
+ } 
+}
+
+function windowResized(){
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 2;
+  cnv.position(x, y);
 }
