@@ -58,7 +58,8 @@ background(0);
 }
 
 function mousePressed(){
- if(audioContext.state == "suspended" || audioContext.state == "closed"){ 
+ /*if(audioContext.state == "suspended" || audioContext.state == "closed"){ 
   audioContext.resume();
- }
+ } */
+ audioContext.resume();
 }

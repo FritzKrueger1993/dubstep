@@ -29,15 +29,15 @@ function updateSound(){
     lfoFreq = map(mouseXfloat,0,1,0.5,8);
     lfoAmountValue = map(mouseYfloat, 1, 0, 0, freq-10);
 
-    filter.frequency.setTargetAtTime(freq, audioContext.currentTime, 0.2);
-    lfo.frequency.setTargetAtTime(lfoFreq, audioContext.currentTime, 0.2);
-    lfoAmount.gain.setTargetAtTime(lfoAmountValue,audioContext.currentTime, 0.2);
+    filter.frequency.setTargetAtTime(freq, audioContext.currentTime, 0.02);
+    lfo.frequency.setTargetAtTime(lfoFreq, audioContext.currentTime, 0.02);
+    lfoAmount.gain.setTargetAtTime(lfoAmountValue,audioContext.currentTime, 0.02);
 
     if(mouseIsPressed){
         masterGain.gain.setTargetAtTime(0.5, audioContext.currentTime, 0.02);
     }
     else{
-        masterGain.gain.setTargetAtTime(0, audioContext.currentTime, 0.05);
+        masterGain.gain.setTargetAtTime(0, audioContext.currentTime, 0.08);
     }
    
 }
